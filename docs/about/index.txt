@@ -1,0 +1,13 @@
+####################
+About django-anysign
+####################
+
+This section is about the `django-anysign` project itself.
+
+.. toctree::
+
+   vision
+   alternatives
+   license
+   authors
+   changelog

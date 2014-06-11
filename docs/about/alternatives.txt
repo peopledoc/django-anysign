@@ -1,0 +1,43 @@
+#################################
+Alternatives and related projects
+#################################
+
+This document presents other projects that provide similar or complementary
+functionalities. It focuses on differences or relationships with
+`django-anysign`.
+
+
+****************
+django-dummysign
+****************
+
+`django-dummysign`_ provides a dummy backend that implements `django-anysign`
+API. It is made for tests, prototypes or developements.
+
+
+***************
+django-docusign
+***************
+
+`django-docusign`_ provides a backend for `DocuSign`_ signature service. It
+uses `django-anysign` to integrate `pydocusign`_ in `Django`.
+
+
+*****************
+django-hello_sign
+*****************
+
+`django-hello_sign`_ integrates `hellosign`_ in `Django`.
+It does not use `django-anysign` API.
+
+
+.. rubric:: References
+
+.. target-notes::
+
+.. _`django-dummysign`: https://github.com/novapost/django-dummysign/
+.. _`django-docusign`: https://github.com/novapost/django-docusign/
+.. _`DocuSign`: https://www.docusign.com/
+.. _`pydocusign`: https://github.com/novapost/pydocusign/
+.. _`django-hello_sign`: https://pypi.python.org/pypi/django-hello_sign/
+.. _`hellosign`: https://www.hellosign.com/
