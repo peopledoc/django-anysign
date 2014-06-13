@@ -87,7 +87,7 @@ class SignatureBackend(object):
 
         """
         return reverse(
-            self.get_signer_recipient_url_name(),
+            self.get_signer_return_url_name(),
             args=[signer.pk])
 
     def get_signer_return_url_name(self):

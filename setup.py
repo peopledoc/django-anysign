@@ -14,7 +14,7 @@ IS_PYTHON2 = sys.version_info[0] == 2
 
 
 NAME = 'django-anysign'
-DESCRIPTION = 'Django application for DocuSign signature SAAS platform.'
+DESCRIPTION = 'Django application to manage online signature in a generic way.'
 README = open(os.path.join(here, 'README.rst')).read()
 VERSION = open(os.path.join(here, 'VERSION')).read().strip()
 AUTHOR = u'Benoît Bryon'
@@ -31,7 +31,7 @@ CLASSIFIERS = [
 KEYWORDS = [
     '',
 ]
-PACKAGES = [NAME.replace('-', '_')]
+PACKAGES = [NAME.replace('-', '_'), 'django_dummysign']
 REQUIREMENTS = [
     'Django',
     'setuptools',

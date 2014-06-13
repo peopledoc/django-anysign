@@ -14,6 +14,17 @@ django-dummysign
 `django-dummysign`_ provides a dummy backend that implements `django-anysign`
 API. It is made for tests, prototypes or developements.
 
+.. note::
+
+   At the momenet, `django-dummysign` is distributed as part of
+   `django-anysign` itself. When you ``pip install django-anysign`` you get
+   both ``import django_anysign`` and ``django_dummysign``.
+
+   This happened because `django-anysign` and `django-dummysign` are developed
+   together and tests from one require updates from the other, and vice-versa.
+   They may be separated again later, as an example if `django-dummysign` gets
+   additional requirements such as pyPdf you do not need in `django-anysign`.
+
 
 ***************
 django-docusign
@@ -35,7 +46,8 @@ It does not use `django-anysign` API.
 
 .. target-notes::
 
-.. _`django-dummysign`: https://github.com/novapost/django-dummysign/
+.. _`django-dummysign`:
+   https://github.com/novapost/django-anysign/tree/master/django_dummysign/
 .. _`django-docusign`: https://github.com/novapost/django-docusign/
 .. _`DocuSign`: https://www.docusign.com/
 .. _`pydocusign`: https://github.com/novapost/pydocusign/

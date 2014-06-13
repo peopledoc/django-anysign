@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>django-anysign demo</title>
+  </head>
+  <body>
+    <h1>Sign a document</h1>
+    <p>
+      By clicking the button below, you will sign a sample PDF file.
+    </p>
+    <p>
+      The signature backend will call "callback" URL.
+    </p>
+    <p>
+      As a signer, you will be redirected to "signer_return" URL.
+    </p>
+    <form action="." method="POST">
+      {% csrf_token %}
+      {{ form }}
+      <button type="submit">Sign document</button>
+    </form>
+  </body>
+</html>

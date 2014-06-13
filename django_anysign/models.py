@@ -2,8 +2,7 @@ from django.conf import settings
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from django_anysign import get_signature_backend_instance
-from django_anysign import get_signature_type_model, get_signature_model
+from django_anysign.loading import get_signature_backend_instance
 
 
 def signature_backend_choices():
@@ -11,12 +10,15 @@ def signature_backend_choices():
     return [(code, code) for code in settings.ANYSIGN['BACKENDS'].keys()]
 
 
-class SignatureTypeMixin(object):
+class SignatureTypeMixin(models.Model):
     signature_backend_code = models.CharField(
         _('signature backend'),
         max_length=100,
         choices=signature_backend_choices(),
     )
+
+    class Meta:
+        abstract = True
 
     @property
     def signature_backend_options(self):
@@ -45,23 +47,33 @@ class SignatureTypeMixin(object):
             return self._signature_backend
 
 
-class SignatureMixin(object):
-    signature_type = models.ForeignKey(
-        get_signature_type_model(),
-        verbose_name=_('signature type'))
+def SignatureMixin(SignatureType):
+    class SignatureMixin(models.Model):
+        signature_type = models.ForeignKey(
+            SignatureType,
+            verbose_name=_('signature type'))
 
-    @property
-    def signature_backend(self):
-        """Return signature backend instance."""
-        return self.signature_type.signature_backend
+        class Meta:
+            abstract = True
+
+        @property
+        def signature_backend(self):
+            """Return signature backend instance."""
+            return self.signature_type.signature_backend
+    return SignatureMixin
 
 
-class SignerMixin(object):
-    signature = models.ForeignKey(
-        get_signature_model(),
-        related_name='signers')
+def SignerMixin(Signature):
+    class SignerMixin(models.Model):
+        signature = models.ForeignKey(
+            Signature,
+            related_name='signers')
 
-    @property
-    def signature_backend(self):
-        """Return signature backend instance."""
-        return self.signature.signature_backend
+        class Meta:
+            abstract = True
+
+        @property
+        def signature_backend(self):
+            """Return signature backend instance."""
+            return self.signature.signature_backend
+    return SignerMixin

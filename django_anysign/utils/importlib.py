@@ -11,5 +11,5 @@ def import_member(import_string):
 
     """
     module_name, factory_name = str(import_string).rsplit('.', 1)
-    module = __import__(module_name, globals(), locals(), [factory_name], -1)
+    module = __import__(module_name, globals(), locals(), [factory_name], 0)
     return getattr(module, factory_name)

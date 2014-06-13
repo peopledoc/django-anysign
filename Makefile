@@ -8,7 +8,7 @@ TOX = tox
 PROJECT = $(shell python -c "import setup; print setup.NAME")
 
 
-.PHONY: help develop clean distclean maintainer-clean test documentation sphinx readme release
+.PHONY: help develop clean distclean maintainer-clean test documentation sphinx readme release demo
 
 
 #: help - Display callable targets.
@@ -22,6 +22,13 @@ help:
 develop:
 	$(PIP) install tox
 	$(PIP) install -e .
+	$(PIP) install -e ./demo/
+
+
+#: demo - Install demo project.
+demo: develop
+	django-anysign-demo syncdb --noinput
+	django-anysign-demo migrate
 
 
 #: clean - Basic cleanup, mostly temporary files.

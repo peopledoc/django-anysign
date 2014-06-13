@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>django-anysign demo</title>
+  </head>
+  <body>
+    <h1>Create and send a signature</h1>
+    <p>
+      By clicking the button below, you request a <code>Signature</code> instance
+      for a sample PDF file.
+    </p>
+    <p>
+      Once the signature object is saved in database, you will be redirected
+      to the "signer" URL.
+    </p>
+    <form action="." method="POST">
+      {% csrf_token %}
+      {{ form }}
+      <button type="submit">Generate signature and redirect to signer URL</button>
+    </form>
+  </body>
+</html>
