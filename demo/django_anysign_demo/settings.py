@@ -75,3 +75,47 @@ NOSE_ARGS = [
     '--all-modules',
     '--rednose',
 ]
+SOUTH_TESTS_MIGRATE = False
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+        },
+        'null': {
+            'class': 'django.utils.log.NullHandler',
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        }
+    },
+    'loggers': {
+        'django_dummysign': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+        'django_anysign_demo': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+        'django_dummysign': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+    }
+}

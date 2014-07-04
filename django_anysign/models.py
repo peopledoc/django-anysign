@@ -22,12 +22,30 @@ class SignatureTypeMixin(models.Model):
 
     @property
     def signature_backend_options(self):
-        """Return dictionary for backend's specific configuration."""
-        raise NotImplementedError()
+        """Return dictionary for backend's specific configuration.
+
+        Default implementation returns empty dictionary.
+
+        There are 2 main ways for you to setup backends with the right
+        arguments:
+
+        * in the model subclassing this one, override this property. This is
+          the good option if you can have several SignatureType instances for
+          one backend (:attr:`signature_backend_code` is not unique).
+
+        * in the backend subclass, make ``__init__()`` read the Django
+          settings or environment. This can be a good option if you have an
+          unique SignatureBackend instance matching a backend
+          (:attr:`signature_backend_code` is unique).
+
+        """
+        return {}
 
     def get_signature_backend(self):
         """Instanciate and return signature backend instance."""
-        return get_signature_backend_instance(self.signature_backend_code)
+        return get_signature_backend_instance(
+            self.signature_backend_code,
+            **self.signature_backend_options)
 
     @property
     def signature_backend(self):
@@ -49,9 +67,17 @@ class SignatureTypeMixin(models.Model):
 
 def SignatureMixin(SignatureType):
     class SignatureMixin(models.Model):
+        #: Type of the signature, including backend.
         signature_type = models.ForeignKey(
             SignatureType,
             verbose_name=_('signature type'))
+        #: Identifier in backend's database.
+        signature_backend_id = models.CharField(
+            _('ID for signature backend'),
+            max_length=100,
+            db_index=True,
+            blank=True,
+            default=u'')
 
         class Meta:
             abstract = True
@@ -60,6 +86,18 @@ def SignatureMixin(SignatureType):
         def signature_backend(self):
             """Return signature backend instance."""
             return self.signature_type.signature_backend
+
+        def signature_documents(self):
+            """Return list of documents (file wrappers) to sign.
+
+            The following properties are expected for returned items:
+
+            * ``name``
+            * ``bytes``: binary bytes.
+              Typically ``lambda x: x.open('rb').read()``
+
+            """
+            raise NotImplementedError
     return SignatureMixin
 
 

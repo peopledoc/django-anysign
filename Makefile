@@ -6,6 +6,7 @@
 PIP = pip
 TOX = tox
 PROJECT = $(shell python -c "import setup; print setup.NAME")
+DEMO = django-anysign-demo
 
 
 .PHONY: help develop clean distclean maintainer-clean test documentation sphinx readme release demo
@@ -27,8 +28,13 @@ develop:
 
 #: demo - Install demo project.
 demo: develop
-	django-anysign-demo syncdb --noinput
-	django-anysign-demo migrate
+	$(DEMO) syncdb --noinput
+	$(DEMO) migrate
+
+
+#: serve - Run development server for demo project.
+serve: demo
+	$(DEMO) runserver
 
 
 #: clean - Basic cleanup, mostly temporary files.

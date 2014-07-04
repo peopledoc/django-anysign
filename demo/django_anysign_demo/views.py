@@ -1,7 +1,12 @@
+import logging
+
 from django import forms
 from django.views.generic import FormView, UpdateView
 
 import django_anysign
+
+
+logger = logging.getLogger(__name__)
 
 
 class SendView(FormView):
@@ -9,6 +14,7 @@ class SendView(FormView):
     template_name = 'send.html'
 
     def form_valid(self, form):
+        # Create signature instance in local DB.
         SignatureType = django_anysign.get_signature_type_model()
         Signature = django_anysign.get_signature_model()
         Signer = django_anysign.get_signer_model()
@@ -17,7 +23,14 @@ class SendView(FormView):
         signature = Signature.objects.create(signature_type=signature_type)
         signer = Signer()
         signature.signers.add(signer)
+        logger.debug(
+            '[django_anysign_demo] Signature ID={id} created in local DB'
+            .format(id=signature.id))
+        # Register signature in backend's DB.
+        signature.signature_backend.create_signature(signature)
+        # Remember the signature object for later use (:meth:`get_success_url`)
         self.signature = signature
+        # Handle the form as always.
         return FormView.form_valid(self, form)
 
     def get_success_url(self):
