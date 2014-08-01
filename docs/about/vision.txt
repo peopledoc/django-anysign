@@ -1,3 +1,42 @@
 ######
 Vision
 ######
+
+`django-anysign` provides conventions and base resources to implement digital
+signature features within a Django project.
+
+`django-anysign`'s goal is to provide a consistent API whatever the signature
+implementation. This concept basically covers the following use cases:
+
+* plug several signature backends and their specific workflows into a single
+  website.
+
+* in a website using a single signature backend, migrate from one backend to
+  another with minimum efforts.
+
+* as a developer, implement bindings for a new signature service vendor.
+
+`django-anysign` presumes the following items are generally involved in digital
+signature features:
+
+* models. Such as signature, signer and signature type (backend options).
+
+* workflows. They usually start with the creation of a document to sign (setup
+  a signature, assign signers, choose a backend). They usually end when the
+  document has been signed by all signers. Steps between "start" and "end"
+  typically vary depending on the vendor signature service.
+
+* views. Most signature workflows use similar views, such as
+  "create signature", "sign document", "signer processed document" or
+  "API callback". Of course, the implementation and order vary depending on the
+  vendor signature service. But some bits are generic.
+
+`django-anysign` does not include vendor-specific implementation. Third-party
+projects do. And they can be based on `django-anysign`. So as a developer, you
+are likely to discover `django-anysign` via these vendor-specific projects. See
+:doc:`/about/alternatives` for details about third-party projects.
+
+`django-anysign` is a framework. It does not provide all-in-one solutions. You
+may have to implement some things in your Django project. `django-anysign`
+tries to make this custom code easier to imagine and write, using conventions,
+utilities and base classes.

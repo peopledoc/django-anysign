@@ -10,11 +10,18 @@ about future releases, check `milestones`_ and :doc:`/about/vision`.
 
 Initial release.
 
-- Nothing changed yet.
+- Introduced base model ``SignatureType`` and base model factories
+  ``SignatureFactory`` and ``SignerFactory``.
+
+- Introduced base backend class ``SignatureBackend``.
+
+- Introduced loaders for custom models and backend:
+  ``get_signature_backend_instance``, ``get_signature_type_model``,
+  ``get_signature_model`` and ``get_signer_model``.
 
 
 .. rubric:: Notes & references
 
 .. target-notes::
 
-.. _`milestones`: https://github.com/novapost/django-anysign/issues/milestones
+.. _`milestones`: https://github.com/novapost/django-anysign/milestones

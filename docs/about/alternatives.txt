@@ -12,7 +12,7 @@ django-dummysign
 ****************
 
 `django-dummysign`_ provides a dummy backend that implements `django-anysign`
-API. It is made for tests, prototypes or developements.
+API. It is made for tests, prototypes or developments.
 
 .. note::
 

@@ -10,11 +10,27 @@ def signature_backend_choices():
     return [(code, code) for code in settings.ANYSIGN['BACKENDS'].keys()]
 
 
-class SignatureTypeMixin(models.Model):
+class SignatureType(models.Model):
+    """Abstract base model for signature type.
+
+    A signature type encapsulates backend setup. Typically:
+
+    * a "configured backend" is a backend class (such as
+      :class:~`django-dummysign.backend.DummySignBackend`) and related
+      configuration (URL, credentials...).
+
+    * a ``Signature`` instance will be related to a configured backend, via a
+      ``SignatureType``.
+
+    """
+    #: Machine-readable code for the backend.
+    #: Typically related to settings, by default keys in
+    #: ``settings.ANYSIGN['BACKENDS']`` dictionary.
     signature_backend_code = models.CharField(
         _('signature backend'),
-        max_length=100,
+        max_length=50,
         choices=signature_backend_choices(),
+        db_index=True,
     )
 
     class Meta:
@@ -30,19 +46,27 @@ class SignatureTypeMixin(models.Model):
         arguments:
 
         * in the model subclassing this one, override this property. This is
-          the good option if you can have several SignatureType instances for
-          one backend (:attr:`signature_backend_code` is not unique).
+          the good option if you can have several ``SignatureType`` instances
+          for one backend, i.e. if :attr:`signature_backend_code` is not
+          unique.
 
-        * in the backend subclass, make ``__init__()`` read the Django
+        * in the backend's subclass, make ``__init__()`` read the Django
           settings or environment. This can be a good option if you have an
-          unique SignatureBackend instance matching a backend
+          unique ``SignatureBackend`` instance matching a backend
           (:attr:`signature_backend_code` is unique).
 
         """
         return {}
 
     def get_signature_backend(self):
-        """Instanciate and return signature backend instance."""
+        """Instanciate and return signature backend instance.
+
+        Default implementation uses
+        :func:`~django-anysign.loading.get_backend_instance` with
+        :attr:`signature_backend_code` as positional arguement and with
+        :meth:`signature_backend_options` as keyword arguments.
+
+        """
         return get_signature_backend_instance(
             self.signature_backend_code,
             **self.signature_backend_options)
@@ -65,13 +89,22 @@ class SignatureTypeMixin(models.Model):
             return self._signature_backend
 
 
-def SignatureMixin(SignatureType):
-    class SignatureMixin(models.Model):
-        #: Type of the signature, including backend.
+def SignatureFactory(SignatureType):
+    """Return base class for signature model, using ``SignatureType`` model.
+
+    This pattern is the best one we found at the moment to have an abstract
+    base model ``SignatureBase`` with appropriate foreign key to
+    ``SignatureType`` model. Feel free to propose a better option if you know
+    one ;)
+
+    """
+    class Signature(models.Model):
+        """Base model for signature models."""
+        #: Type of the signature, i.e. a backend and its configuration.
         signature_type = models.ForeignKey(
             SignatureType,
             verbose_name=_('signature type'))
-        #: Identifier in backend's database.
+        #: Identifier in backend's external database.
         signature_backend_id = models.CharField(
             _('ID for signature backend'),
             max_length=100,
@@ -84,7 +117,12 @@ def SignatureMixin(SignatureType):
 
         @property
         def signature_backend(self):
-            """Return signature backend instance."""
+            """Return signature backend instance.
+
+            This is just an utility shortcut, an alias to signature type's
+            backend property.
+
+            """
             return self.signature_type.signature_backend
 
         def signature_documents(self):
@@ -96,13 +134,30 @@ def SignatureMixin(SignatureType):
             * ``bytes``: binary bytes.
               Typically ``lambda x: x.open('rb').read()``
 
+            Default implementation raises :class:`NotImplementedError`, i.e.
+            your custom signature class must override this method.
+
             """
             raise NotImplementedError
-    return SignatureMixin
+    return Signature
 
 
-def SignerMixin(Signature):
-    class SignerMixin(models.Model):
+def SignerFactory(Signature):
+    """Return base class for signer model, using ``Signature`` model.
+
+    This pattern is the best one we found at the moment to have an abstract
+    base model ``SignerBase`` with appropriate foreign key to ``Signature``
+    model. Feel free to propose a better option if you know one ;)
+
+    """
+    class Signer(models.Model):
+        """Base class for signer.
+
+        A signer is typically related to an user... but could be anything you
+        want! By default, it is just related to a signature.
+
+        """
+        #: Signature.
         signature = models.ForeignKey(
             Signature,
             related_name='signers')
@@ -112,6 +167,11 @@ def SignerMixin(Signature):
 
         @property
         def signature_backend(self):
-            """Return signature backend instance."""
+            """Return signature backend instance.
+
+            This is just an utility shortcut, an alias to signature type's
+            backend property.
+
+            """
             return self.signature.signature_backend
-    return SignerMixin
+    return Signer

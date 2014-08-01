@@ -2,7 +2,7 @@
 Install
 #######
 
-`pydocusign` is open-source software, published under BSD license.
+`django-anysign` is open-source software, published under BSD license.
 See :doc:`/about/license` for details.
 
 If you want to install a development environment, you should go to
@@ -13,16 +13,17 @@ If you want to install a development environment, you should go to
 Prerequisites
 *************
 
-* `Python`_ ==2.7.
+* `Python`_ 2.7, 3.3 or 3.4. Other versions may work, but they are not part of
+  the test suite at the moment.
 
 
 ************
 As a library
 ************
 
-In most cases, you will use `django-anysign` as a dependency of another project.
-In such a case, you should add ``django-anysign`` in your main project's
-requirements. Typically in :file:`setup.py`:
+In most cases, you will use `django-anysign` as a dependency of another
+project. In such a case, you should add ``django-anysign`` in your main
+project's requirements. Typically in :file:`setup.py`:
 
 .. code:: python
 

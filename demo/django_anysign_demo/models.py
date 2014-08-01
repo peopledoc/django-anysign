@@ -1,13 +1,13 @@
-import django_anysign.models
+import django_anysign
 
 
-class SignatureType(django_anysign.models.SignatureTypeMixin):
+class SignatureType(django_anysign.SignatureType):
     pass
 
 
-class Signature(django_anysign.models.SignatureMixin(SignatureType)):
+class Signature(django_anysign.SignatureFactory(SignatureType)):
     pass
 
 
-class Signer(django_anysign.models.SignerMixin(Signature)):
+class Signer(django_anysign.SignerFactory(Signature)):
     pass
