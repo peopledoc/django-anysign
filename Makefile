@@ -38,7 +38,7 @@ serve: demo
 
 
 #: clean - Basic cleanup, mostly temporary files.
-clean: clean-build clean-pyc
+clean:
 	find . -name '*.pyc' -delete
 	find . -name '*.pyo' -delete
 
