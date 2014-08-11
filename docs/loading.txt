@@ -1,0 +1,35 @@
+#######
+Loading
+#######
+
+Since `django-anysign` does not provide concrete :doc:`/models`, and models
+are configured in :doc:`settings </settings>`, here are tools to load models
+and backends.
+
+
+*********************
+get_signature_backend
+*********************
+
+.. autofunction:: django_anysign.loading.get_signature_backend
+
+
+************************
+get_signature_type_model
+************************
+
+.. autofunction:: django_anysign.loading.get_signature_type_model
+
+
+*******************
+get_signature_model
+*******************
+
+.. autofunction:: django_anysign.loading.get_signature_model
+
+
+****************
+get_signer_model
+****************
+
+.. autofunction:: django_anysign.loading.get_signer_model

@@ -1,8 +1,9 @@
-from django.conf import settings
+from django_anysign import settings
+
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from django_anysign.loading import get_signature_backend_instance
+from django_anysign.loading import get_signature_backend
 
 
 def signature_backend_choices():
@@ -38,7 +39,7 @@ class SignatureType(models.Model):
 
     @property
     def signature_backend_options(self):
-        """Return dictionary for backend's specific configuration.
+        """Dictionary for backend's specific configuration.
 
         Default implementation returns empty dictionary.
 
@@ -67,7 +68,7 @@ class SignatureType(models.Model):
         :meth:`signature_backend_options` as keyword arguments.
 
         """
-        return get_signature_backend_instance(
+        return get_signature_backend(
             self.signature_backend_code,
             **self.signature_backend_options)
 
@@ -117,7 +118,7 @@ def SignatureFactory(SignatureType):
 
         @property
         def signature_backend(self):
-            """Return signature backend instance.
+            """Signature backend instance.
 
             This is just an utility shortcut, an alias to signature type's
             backend property.
@@ -146,7 +147,7 @@ def SignerFactory(Signature):
     """Return base class for signer model, using ``Signature`` model.
 
     This pattern is the best one we found at the moment to have an abstract
-    base model ``SignerBase`` with appropriate foreign key to ``Signature``
+    base model ``Signer`` with appropriate foreign key to ``Signature``
     model. Feel free to propose a better option if you know one ;)
 
     """
@@ -167,7 +168,7 @@ def SignerFactory(Signature):
 
         @property
         def signature_backend(self):
-            """Return signature backend instance.
+            """Signature backend instance.
 
             This is just an utility shortcut, an alias to signature type's
             backend property.

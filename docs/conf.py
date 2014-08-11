@@ -194,8 +194,8 @@ intersphinx_mapping = {
         'http://docs.python.org/2.7',
         None),
     'django': (
-        'http://docs.djangoproject.com/en/1.6/',
-        'http://docs.djangoproject.com/en/1.6/_objects/'),
+        'https://docs.djangoproject.com/en/1.6/',
+        'https://docs.djangoproject.com/en/1.6/_objects/'),
 }
 
 # -- Options for LaTeX output --------------------------------------------------

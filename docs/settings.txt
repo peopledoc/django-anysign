@@ -1,0 +1,59 @@
+#########
+Configure
+#########
+
+Here is the list of settings used by `django-anysign`.
+
+
+**************
+INSTALLED_APPS
+**************
+
+There is no need to register `django-anysign` application in your Django's
+``INSTALLED_APPS`` setting.
+
+
+*******
+ANYSIGN
+*******
+
+The ``settings.ANYSIGN`` is a dictionary that contains all specific
+configuration for `django-anysign`.
+
+Example from the :doc:`/demo`:
+
+.. literalinclude:: /../demo/django_anysign_demo/settings.py
+   :language: python
+   :start-after: BEGIN settings.ANYSIGN
+   :end-before: END settings.ANYSIGN
+
+BACKENDS
+========
+
+A dictionary where:
+
+* keys are backend codes, i.e. machine-readable names for backends. These keys
+  are typically stored in the database as
+  :attr:`django_anysign.models.SignatureType.signature_backend_code`.
+
+* values are Python path to import backend's implementation, typically a class.
+
+See also :func:`~django_anysign.loading.get_signature_backend`.
+
+
+SIGNATURE_TYPE_MODEL
+====================
+
+The Python path to import the :ref:`SignatureType-section` model.
+
+
+SIGNATURE_MODEL
+===============
+
+The Python path to import the :ref:`Signature-section` model.
+
+
+SIGNER_MODEL
+============
+
+The Python path to import the :ref:`Signer-section` model.

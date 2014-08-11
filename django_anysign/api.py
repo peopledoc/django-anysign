@@ -22,7 +22,7 @@ of the deprecation policy. They can be moved, changed, removed without notice.
 
 """
 from django_anysign.backend import SignatureBackend  # NoQA
-from django_anysign.loading import get_signature_backend_instance  # NoQA
+from django_anysign.loading import get_signature_backend  # NoQA
 from django_anysign.loading import get_signature_type_model  # NoQA
 from django_anysign.loading import get_signature_model  # NoQA
 from django_anysign.loading import get_signer_model  # NoQA

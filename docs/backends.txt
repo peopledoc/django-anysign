@@ -1,0 +1,47 @@
+########
+Backends
+########
+
+`django-anysign`'s signature backend encapsulates signature workflow and
+integration with vendor specific implementation.
+
+.. note::
+
+   The backend API is quite experimental. This document deals with both vision
+   (concepts) and current implementation (which may improve).
+
+
+******************
+Scope of a backend
+******************
+
+A signature backend is typically known by models and views. They use the
+backend to perform vendor-specific operations. The backend contains
+vendor-specific implementation that has to be shared with several consumers
+such as models and views.
+
+A signature backend also typically knowns the workflows. So it should be
+helpful for URL resolution.
+
+
+*********************************
+django-anysign's SignatureBackend
+*********************************
+
+Here is the current implementation of base backend.
+
+.. autoclass:: django_anysign.backend.SignatureBackend
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :member-order: bysource
+
+***********************************
+django-dummysign's SignatureBackend
+***********************************
+
+Here is the demo signature backend implementation provided by
+:ref:`django-dummysign-section`.
+
+.. literalinclude:: /../django_dummysign/backend.py
+   :language: python

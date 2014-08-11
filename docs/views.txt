@@ -1,0 +1,6 @@
+#####
+Views
+#####
+
+At the moment, `django-anysign` does not provide views or generic views. But
+this feature is part of the :doc:`/about/vision`...

@@ -1,0 +1,70 @@
+######
+Models
+###### 
+
+`django-anysign` presumes digital signature involves models in the Django
+project: one to store the signatures, another to store signers, and one to
+store backend specific options.
+
+That said, `django-anysign` does not embeds concrete models: it provides base
+models you have to extend in your applications. This design allows you to
+customize models the way you like, i.e. depending on your use case.
+
+
+*******************
+Minimal integration
+*******************
+
+Here is the minimal integration you need in some :file:`models.py`:
+
+.. literalinclude:: /../demo/django_anysign_demo/models.py
+   :language: python
+
+The example above is taken from `django-anysign`'s :doc:`/demo`.
+
+
+.. _SignatureType-section:
+
+*************
+SignatureType
+*************
+
+.. autoclass:: django_anysign.models.SignatureType
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :member-order: bysource
+
+
+.. _Signature-section:
+
+*********
+Signature
+*********
+
+.. autofunction:: django_anysign.models.SignatureFactory
+
+Here is what you get in the :doc:`/demo`:
+
+.. autoclass:: django_anysign_demo.models.Signature
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :member-order: bysource
+
+
+.. _Signer-section:
+
+******
+Signer
+******
+
+.. autofunction:: django_anysign.models.SignerFactory
+
+Here is what you get in the :doc:`/demo`:
+
+.. autoclass:: django_anysign_demo.models.Signer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :member-order: bysource

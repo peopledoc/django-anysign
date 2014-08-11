@@ -53,6 +53,7 @@ INSTALLED_APPS = (
 )
 
 
+# BEGIN settings.ANYSIGN.
 ANYSIGN = {
     'BACKENDS': {
         'dummysign': 'django_dummysign.backend.DummySignBackend',
@@ -61,6 +62,7 @@ ANYSIGN = {
     'SIGNATURE_MODEL': 'django_anysign_demo.models.Signature',
     'SIGNER_MODEL': 'django_anysign_demo.models.Signer',
 }
+# END settings.ANYSIGN.
 
 
 # Test/development settings.

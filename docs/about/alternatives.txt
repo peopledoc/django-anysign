@@ -7,6 +7,8 @@ functionalities. It focuses on differences or relationships with
 `django-anysign`.
 
 
+.. _django-dummysign-section:
+
 ****************
 django-dummysign
 ****************
@@ -16,7 +18,7 @@ API. It is made for tests, prototypes or developments.
 
 .. note::
 
-   At the momenet, `django-dummysign` is distributed as part of
+   At the moment, `django-dummysign` is distributed as part of
    `django-anysign` itself. When you ``pip install django-anysign`` you get
    both ``import django_anysign`` and ``django_dummysign``.
 

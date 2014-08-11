@@ -3,7 +3,13 @@ Demo project
 ############
 
 `Demo folder in project's repository`_ contains a Django project to illustrate
-`django-anysign` usage.
+`django-anysign` usage. It basically integrates :ref:`django-dummysign-section`
+in a project.
+
+Examples in the documentation are imported from the demo project.
+
+Feel free to use the demo project as a sandbox. See :doc:`/contributing` for
+details about development environment setup.
 
 
 .. rubric:: Notes & references
@@ -11,7 +17,4 @@ Demo project
 .. target-notes::
 
 .. _`demo folder in project's repository`:
-   https://github.com/benoitbryon/django-downloadview/tree/master/demo/demoproject/
-
-.. _`Python`: http://python.org
-.. _`Virtualenv`: http://virtualenv.org
+   https://github.com/novapost/django-anysign/tree/master/demo/

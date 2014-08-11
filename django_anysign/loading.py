@@ -4,8 +4,14 @@ from django.conf import settings
 from django_anysign.utils.importlib import import_member
 
 
-def get_signature_backend_instance(code, *args, **kwargs):
-    """Instantiate instance for ``backend_code``."""
+def get_signature_backend(code, *args, **kwargs):
+    """Instantiate instance for ``backend_code`` with ``args`` and ``kwargs``.
+
+    Get the backend factory (class) using ``settings.ANYSIGN['BACKENDS']``.
+
+    Positional and keyword arguments are proxied as is.
+
+    """
     factory_path = settings.ANYSIGN['BACKENDS'][code]
     factory = import_member(factory_path)
     return factory(*args, **kwargs)

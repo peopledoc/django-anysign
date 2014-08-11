@@ -10,6 +10,12 @@ Contents
    :titlesonly:
 
    install
+   settings
+   models
+   backends
+   views
+   loading
+   demo
    about/index
    contributing.txt
 
