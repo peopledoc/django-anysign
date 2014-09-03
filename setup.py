@@ -33,7 +33,7 @@ KEYWORDS = [
 ]
 PACKAGES = [NAME.replace('-', '_'), 'django_dummysign']
 REQUIREMENTS = [
-    'Django',
+    'Django<1.7',
     'setuptools',
 ]
 ENTRY_POINTS = {}
