@@ -19,6 +19,6 @@ class DummySignBackend(django_anysign.SignatureBackend):
         As a dummy backend: just emit a log.
 
         """
-        signature = super(DummySignBackend, self).create_signature(self)
+        signature = super(DummySignBackend, self).create_signature(signature)
         logger.debug('[django_dummysign] Signature created in backend')
         return signature
