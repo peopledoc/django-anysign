@@ -8,7 +8,10 @@ about future releases, check `milestones`_ and :doc:`/about/vision`.
 0.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+Minor fixes.
+
+- Feature #2 - Explicitely mark Django 1.7 as not supported (tests fail with
+  Django 1.7) in packaging.
 
 
 0.1 (2014-08-11)
