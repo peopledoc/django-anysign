@@ -175,4 +175,7 @@ def SignerFactory(Signature):
 
             """
             return self.signature.signature_backend
+
+        def get_absolute_url(self):
+            return self.signature_backend.get_signer_url(self)
     return Signer

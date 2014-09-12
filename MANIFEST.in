@@ -1,5 +1,5 @@
 recursive-include django_anysign *
-recursive-include django_docusign *
+recursive-include django_dummysign *
 global-exclude *.pyc
 include AUTHORS
 include CHANGELOG
