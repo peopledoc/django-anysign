@@ -13,6 +13,9 @@ Minor fixes.
 - Feature #2 - Explicitely mark Django 1.7 as not supported (tests fail with
   Django 1.7) in packaging.
 
+- Bug #3 - Fixed wrong usage of `django-anysign` API in `django-dummysign`
+  backend.
+
 
 0.1 (2014-08-11)
 ----------------
