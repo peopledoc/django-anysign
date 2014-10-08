@@ -162,6 +162,11 @@ def SignerFactory(Signature):
         signature = models.ForeignKey(
             Signature,
             related_name='signers')
+        #: Position as a signer.
+        signing_order = models.PositiveSmallIntegerField(
+            _('signing order'),
+            default=0,
+            help_text=_('Position in the list of signers. Starts at 1.'))
 
         class Meta:
             abstract = True
