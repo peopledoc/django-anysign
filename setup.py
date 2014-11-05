@@ -34,6 +34,7 @@ KEYWORDS = [
 PACKAGES = [NAME.replace('-', '_'), 'django_dummysign']
 REQUIREMENTS = [
     'Django<1.7',
+    'django-uuidfield>=0.5',
     'setuptools',
 ]
 ENTRY_POINTS = {}

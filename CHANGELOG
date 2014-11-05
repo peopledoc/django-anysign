@@ -8,7 +8,14 @@ about future releases, check `milestones`_ and :doc:`/about/vision`.
 0.4 (unreleased)
 ----------------
 
-Workaround identifiers.
+Workaround identifiers. You will need schema and data migrations after the
+upgrade.
+
+- Features #7 and #8 - ``Signature`` and ``Signer`` models have
+  ``anysign_internal_id`` attribute. It is an unique identifier for signature
+  or signer on Django side. For use as a "foreign key" in backend's database,
+  whenever possible. It defaults to an UUID. You may override it with a custom
+  property if your models already have some UUID.
 
 - Feature #5 - ``Signer`` model has ``signature_backend_id`` attribute. Use it
   to store the backend's signer identifier, i.e. signer's identifier in
