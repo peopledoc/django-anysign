@@ -3,6 +3,8 @@ from django_anysign import settings
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from uuidfield import UUIDField
+
 from django_anysign.loading import get_signature_backend
 
 
@@ -112,6 +114,11 @@ def SignatureFactory(SignatureType):
             db_index=True,
             blank=True,
             default=u'')
+        #: Identifier in Django's internal database.
+        anysign_internal_id = UUIDField(
+            verbose_name=_('ID in internal database'),
+            auto=True,
+            hyphenate=True)
 
         class Meta:
             abstract = True
@@ -174,6 +181,11 @@ def SignerFactory(Signature):
             db_index=True,
             blank=True,
             default=u'')
+        #: Identifier in Django's internal database.
+        anysign_internal_id = UUIDField(
+            verbose_name=_('ID in internal database'),
+            auto=True,
+            hyphenate=True)
 
         class Meta:
             abstract = True
