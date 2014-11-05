@@ -167,6 +167,13 @@ def SignerFactory(Signature):
             _('signing order'),
             default=0,
             help_text=_('Position in the list of signers. Starts at 1.'))
+        #: Identifier in backend's external database.
+        signature_backend_id = models.CharField(
+            _('ID in signature backend'),
+            max_length=100,
+            db_index=True,
+            blank=True,
+            default=u'')
 
         class Meta:
             abstract = True
