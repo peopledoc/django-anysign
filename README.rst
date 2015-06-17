@@ -27,8 +27,8 @@ Resources
 *********
 
 * Documentation: https://django-anysign.readthedocs.org
-* Bugtracker: https://github.com/novapost/django-anysign/issues
+* Bugtracker: https://github.com/novafloss/django-anysign/issues
 * Changelog: https://django-anysign.readthedocs.org/en/latest/about/changelog.html
-* Roadmap: https://github.com/novapost/django-anysign/milestones
-* Code repository: https://github.com/novapost/django-anysign
-* Continuous integration: https://travis-ci.org/novapost/django-anysign
+* Roadmap: https://github.com/novafloss/django-anysign/milestones
+* Code repository: https://github.com/novafloss/django-anysign
+* Continuous integration: https://travis-ci.org/novafloss/django-anysign

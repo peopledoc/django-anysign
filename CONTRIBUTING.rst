@@ -46,7 +46,7 @@ Clone `django-anysign` repository (adapt to use your own fork):
 
 .. code:: sh
 
-   git clone git@github.com:novapost/django-anysign.git
+   git clone git@github.com:novafloss/django-anysign.git
    cd django-anysign/
 
 
@@ -76,7 +76,7 @@ See also ``make help``.
 
 .. target-notes::
 
-.. _`django-anysign bugtracker`: https://github.com/novapost/django-anysign/issues
+.. _`django-anysign bugtracker`: https://github.com/novafloss/django-anysign/issues
 .. _`rebase`: http://git-scm.com/book/en/Git-Branching-Rebasing
 .. _`merge-based rebase`: http://tech.novapost.fr/psycho-rebasing-en.html
 .. _`pip`: https://pypi.python.org/pypi/pip/
