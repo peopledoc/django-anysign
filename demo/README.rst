@@ -17,4 +17,4 @@ details about development environment setup.
 .. target-notes::
 
 .. _`demo folder in project's repository`:
-   https://github.com/novapost/django-anysign/tree/master/demo/
+   https://github.com/novafloss/django-anysign/tree/master/demo/

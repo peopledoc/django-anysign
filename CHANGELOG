@@ -21,6 +21,9 @@ upgrade.
   to store the backend's signer identifier, i.e. signer's identifier in
   external database.
 
+- Refactoring #15 - Project repository moved to github.com/novafloss (was
+  github.com/novapost).
+
 
 0.3 (2014-10-08)
 ----------------
@@ -61,4 +64,4 @@ Initial release.
 
 .. target-notes::
 
-.. _`milestones`: https://github.com/novapost/django-anysign/milestones
+.. _`milestones`: https://github.com/novafloss/django-anysign/milestones
