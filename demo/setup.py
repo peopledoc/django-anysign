@@ -10,12 +10,12 @@ project_root = os.path.dirname(here)
 
 
 NAME = 'django-anysign-demo'
-DESCRIPTION = ''
+DESCRIPTION = 'Demo for django-anysign.'
 README = open(os.path.join(here, 'README.rst')).read()
 VERSION = open(os.path.join(project_root, 'VERSION')).read().strip()
 AUTHOR = u'Benoît Bryon'
 EMAIL = u'benoit@marmelune.net'
-URL = ''
+URL = 'https://django-anysign.readthedocs.org/'
 CLASSIFIERS = ['Development Status :: 4 - Beta',
                'License :: OSI Approved :: BSD License',
                'Programming Language :: Python :: 2.7',
@@ -26,7 +26,6 @@ REQUIREMENTS = [
     'django-anysign',
     'django-nose',
     'setuptools',
-    'south',
 ]
 ENTRY_POINTS = {
     'console_scripts': [

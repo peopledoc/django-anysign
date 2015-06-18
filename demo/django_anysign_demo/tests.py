@@ -31,7 +31,7 @@ class SendURLTestCase(TestCase):
         response = self.client.post(url)
         self.assertEqual(Signature.objects.all().count(), 1)
         signature = Signature.objects.get()
-        signer = signature.signers.first()
+        signer = signature.signers.all()[0]
         signer_url = signature.signature_backend.get_signer_url(signer)
         self.assertRedirects(response, signer_url)
 

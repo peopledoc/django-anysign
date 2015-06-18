@@ -35,7 +35,7 @@ class SendView(FormView):
 
     def get_success_url(self):
         backend = self.signature.signature_backend
-        signer = self.signature.signers.first()
+        signer = self.signature.signers.all()[0]
         return backend.get_signer_url(signer)
 
 

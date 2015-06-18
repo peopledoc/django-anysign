@@ -6,7 +6,7 @@ Models
 project: one to store the signatures, another to store signers, and one to
 store backend specific options.
 
-That said, `django-anysign` does not embeds concrete models: it provides base
+That said, `django-anysign` does not embed concrete models: it provides base
 models you have to extend in your applications. This design allows you to
 customize models the way you like, i.e. depending on your use case.
 
