@@ -16,5 +16,6 @@ env:
   - TOXENV=sphinx
   - TOXENV=readme
 install:
+  - make develop
 script:
   - make test
