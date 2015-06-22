@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Django settings for django-anysign demo project."""
 import os
+import django
 
 
 # Configure some relative directories.
@@ -36,7 +37,7 @@ STATIC_URL = '/static/'
 
 
 # Applications.
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     # The actual django-anysign demo.
     'django_anysign_demo',
     # Standard Django applications.
@@ -48,7 +49,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Stuff that must be at the end.
     'django_nose',
-)
+]
+if django.get_version() < '1.7':
+    INSTALLED_APPS.append('south')
 
 
 # BEGIN middlewares
@@ -76,10 +79,15 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = [
-    '--verbosity=2',
+    '--all-modules',
+    '--cover-package=django_anysign',
+    '--cover-package=django_anysign_demo',
+    '--cover-package=django_dummysign',
+    '--exclude-dir=demo/django_anysign_demo/migrations',
+    '--exclude-dir=demo/django_anysign_demo/south_migrations',
     '--no-path-adjustment',
     '--nocapture',
-    '--all-modules',
+    '--verbosity=2',
     '--with-coverage',
     '--with-doctest',
 ]
