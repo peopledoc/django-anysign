@@ -19,7 +19,7 @@ class SignatureType(models.Model):
     A signature type encapsulates backend setup. Typically:
 
     * a "configured backend" is a backend class (such as
-      :class:~`django-dummysign.backend.DummySignBackend`) and related
+      :class:`~django-dummysign.backend.DummySignBackend`) and related
       configuration (URL, credentials...).
 
     * a ``Signature`` instance will be related to a configured backend, via a
@@ -107,6 +107,7 @@ def SignatureFactory(SignatureType):
         signature_type = models.ForeignKey(
             SignatureType,
             verbose_name=_('signature type'))
+
         #: Identifier in backend's external database.
         signature_backend_id = models.CharField(
             _('ID for signature backend'),
@@ -114,6 +115,7 @@ def SignatureFactory(SignatureType):
             db_index=True,
             blank=True,
             default=u'')
+
         #: Identifier in Django's internal database.
         anysign_internal_id = UUIDField(
             verbose_name=_('ID in internal database'),
@@ -169,11 +171,13 @@ def SignerFactory(Signature):
         signature = models.ForeignKey(
             Signature,
             related_name='signers')
+
         #: Position as a signer.
         signing_order = models.PositiveSmallIntegerField(
             _('signing order'),
             default=0,
             help_text=_('Position in the list of signers. Starts at 1.'))
+
         #: Identifier in backend's external database.
         signature_backend_id = models.CharField(
             _('ID in signature backend'),
@@ -181,6 +185,7 @@ def SignerFactory(Signature):
             db_index=True,
             blank=True,
             default=u'')
+
         #: Identifier in Django's internal database.
         anysign_internal_id = UUIDField(
             verbose_name=_('ID in internal database'),

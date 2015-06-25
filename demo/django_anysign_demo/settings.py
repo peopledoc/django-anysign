@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 """Django settings for django-anysign demo project."""
-from os.path import abspath, dirname, join
+import os
+import django
 
 
 # Configure some relative directories.
-demoproject_dir = dirname(abspath(__file__))
-demo_dir = dirname(demoproject_dir)
-root_dir = dirname(demo_dir)
-data_dir = join(root_dir, 'var')
-cfg_dir = join(root_dir, 'etc')
+demoproject_dir = os.path.dirname(os.path.abspath(__file__))
+demo_dir = os.path.dirname(demoproject_dir)
+root_dir = os.path.dirname(demo_dir)
+data_dir = os.path.join(root_dir, 'var')
+cfg_dir = os.path.join(root_dir, 'etc')
 
 
 # Mandatory settings.
@@ -20,7 +21,7 @@ WSGI_APPLICATION = 'django_anysign_demo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': join(data_dir, 'db.sqlite'),
+        'NAME': os.path.join(data_dir, 'db.sqlite'),
     }
 }
 
@@ -29,18 +30,16 @@ DATABASES = {
 SECRET_KEY = "This is a secret made public on project's repository."
 
 # Media and static files.
-MEDIA_ROOT = join(data_dir, 'media')
+MEDIA_ROOT = os.path.join(data_dir, 'media')
 MEDIA_URL = '/media/'
-STATIC_ROOT = join(data_dir, 'static')
+STATIC_ROOT = os.path.join(data_dir, 'static')
 STATIC_URL = '/static/'
 
 
 # Applications.
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     # The actual django-anysign demo.
     'django_anysign_demo',
-    # Third-parties.
-    'south',
     # Standard Django applications.
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,7 +49,17 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Stuff that must be at the end.
     'django_nose',
-)
+]
+if django.get_version() < '1.7':
+    INSTALLED_APPS.append('south')
+
+
+# BEGIN middlewares
+MIDDLEWARE_CLASSES = [
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+]
+# END middlewares
 
 
 # BEGIN settings.ANYSIGN.
@@ -69,13 +78,18 @@ ANYSIGN = {
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
-nose_cfg_dir = join(cfg_dir, 'nose')
 NOSE_ARGS = [
-    '--verbosity=2',
+    '--all-modules',
+    '--cover-package=django_anysign',
+    '--cover-package=django_anysign_demo',
+    '--cover-package=django_dummysign',
+    '--exclude-dir=demo/django_anysign_demo/migrations',
+    '--exclude-dir=demo/django_anysign_demo/south_migrations',
     '--no-path-adjustment',
     '--nocapture',
-    '--all-modules',
-    '--rednose',
+    '--verbosity=2',
+    '--with-coverage',
+    '--with-doctest',
 ]
 SOUTH_TESTS_MIGRATE = False
 
@@ -107,7 +121,7 @@ LOGGING = {
         }
     },
     'loggers': {
-        'django_dummysign': {
+        'django_anysign': {
             'handlers': ['console'],
             'level': 'DEBUG',
         },

@@ -5,47 +5,6 @@ import os
 import sys
 
 from setuptools import setup
-
-
-#: Absolute path to directory containing setup.py file.
-here = os.path.abspath(os.path.dirname(__file__))
-#: Boolean, ``True`` if environment is running Python version 2.
-IS_PYTHON2 = sys.version_info[0] == 2
-
-
-NAME = 'django-anysign'
-DESCRIPTION = 'Django application to manage online signature in a generic way.'
-README = open(os.path.join(here, 'README.rst')).read()
-VERSION = open(os.path.join(here, 'VERSION')).read().strip()
-AUTHOR = u'Benoît Bryon'
-EMAIL = 'benoit@marmelune.net'
-LICENSE = ''
-URL = ''
-CLASSIFIERS = [
-    'Programming Language :: Python :: 2.7',
-    'Programming Language :: Python :: 3.3',
-    'Programming Language :: Python :: 3.4',
-    # Add your classifiers here from
-    # https://pypi.python.org/pypi?%3Aaction=list_classifiers
-]
-KEYWORDS = [
-    '',
-]
-PACKAGES = [NAME.replace('-', '_'), 'django_dummysign']
-REQUIREMENTS = [
-    'Django<1.7',
-    'django-uuidfield>=0.5',
-    'setuptools',
-]
-ENTRY_POINTS = {}
-TEST_REQUIREMENTS = []
-CMDCLASS = {}
-SETUP_REQUIREMENTS = [
-    'setuptools'
-]
-
-
-# Tox integration.
 from setuptools.command.test import test as TestCommand
 
 
@@ -62,11 +21,52 @@ class Tox(TestCommand):
         sys.exit(errno)
 
 
-TEST_REQUIREMENTS.append('tox')
-CMDCLASS['test'] = Tox
+#: Absolute path to directory containing setup.py file.
+here = os.path.abspath(os.path.dirname(__file__))
+#: Boolean, ``True`` if environment is running Python version 2.
+IS_PYTHON2 = sys.version_info[0] == 2
 
 
-if __name__ == '__main__':  # Do not run setup() when we import this module.
+NAME = 'django-anysign'
+DESCRIPTION = 'Online signature for Django: multiple services, generic API.'
+README = open(os.path.join(here, 'README.rst')).read()
+VERSION = open(os.path.join(here, 'VERSION')).read().strip()
+AUTHOR = u'Benoît Bryon'
+EMAIL = 'benoit@marmelune.net'
+LICENSE = 'BSD'
+URL = 'https://{name}.readthedocs.org/'.format(name=NAME)
+CLASSIFIERS = [
+    'Development Status :: 4 - Beta',
+    'Framework :: Django',
+    'License :: OSI Approved :: BSD License',
+    'Programming Language :: Python :: 2.7',
+    'Programming Language :: Python :: 3.3',
+    'Programming Language :: Python :: 3.4',
+]
+KEYWORDS = [
+    'signature',
+    'sign',
+    'signer',
+    'generic',
+]
+PACKAGES = [NAME.replace('-', '_'), 'django_dummysign']
+REQUIREMENTS = [
+    # BEGIN requirements
+    'Django',
+    'django-uuidfield>=0.5',
+    'setuptools',
+    # END requirements
+]
+ENTRY_POINTS = {}
+SETUP_REQUIREMENTS = ['setuptools']
+TEST_REQUIREMENTS = ['tox']
+CMDCLASS = {'test': Tox}
+EXTRA_REQUIREMENTS = {
+    'test': TEST_REQUIREMENTS,
+}
+
+
+if __name__ == '__main__':  # Don't run setup() when we import this module.
     setup(
         name=NAME,
         version=VERSION,
@@ -86,4 +86,5 @@ if __name__ == '__main__':  # Do not run setup() when we import this module.
         tests_require=TEST_REQUIREMENTS,
         cmdclass=CMDCLASS,
         setup_requires=SETUP_REQUIREMENTS,
+        extras_require=EXTRA_REQUIREMENTS,
     )

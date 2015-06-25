@@ -20,7 +20,7 @@ API. It is made for tests, prototypes or developments.
 
    At the moment, `django-dummysign` is distributed as part of
    `django-anysign` itself. When you ``pip install django-anysign`` you get
-   both ``import django_anysign`` and ``django_dummysign``.
+   both ``django_anysign`` and ``django_dummysign`` packages.
 
    This happened because `django-anysign` and `django-dummysign` are developed
    together and tests from one require updates from the other, and vice-versa.

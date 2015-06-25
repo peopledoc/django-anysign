@@ -5,16 +5,26 @@ Install
 `django-anysign` is open-source software, published under BSD license.
 See :doc:`/about/license` for details.
 
-If you want to install a development environment, you should go to
-:doc:`/contributing` documentation.
+.. note::
+
+   If you want to install a development environment, you should go to
+   :doc:`/contributing` documentation.
 
 
-*************
-Prerequisites
-*************
+************
+Requirements
+************
 
-* `Python`_ 2.7, 3.3 or 3.4. Other versions may work, but they are not part of
-  the test suite at the moment.
+`django-anysign` has been tested against `Python`_ 2.7, 3.3 and 3.4. Other
+versions may work, but they are not part of the test suite at the moment.
+
+Installing `django-anysign` will automatically trigger the installation of the
+following requirements:
+
+.. literalinclude:: /../setup.py
+   :language: python
+   :start-after: BEGIN requirements
+   :end-before: END requirements
 
 
 ************
@@ -38,7 +48,8 @@ project's requirements. Typically in :file:`setup.py`:
    )
 
 Then when you install your main project with your favorite package manager
-(like `pip`_), `django-anysign` will automatically be installed.
+(like `pip`_), `django-anysign` and its recursive dependencies will
+automatically be installed.
 
 
 **********
@@ -63,7 +74,7 @@ Check `django-anysign` has been installed:
 
    python -c "import django_anysign;print(django_anysign.__version__)"
 
-You should get `django_anysign`'s version.
+You should get installed `django_anysign`'s version.
 
 
 .. rubric:: References
