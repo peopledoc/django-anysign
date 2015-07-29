@@ -52,8 +52,8 @@ KEYWORDS = [
 PACKAGES = [NAME.replace('-', '_'), 'django_dummysign']
 REQUIREMENTS = [
     # BEGIN requirements
-    'Django',
     'django-uuidfield>=0.5',
+    'Django',
     'setuptools',
     # END requirements
 ]
