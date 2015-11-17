@@ -176,7 +176,7 @@ def SignerFactory(Signature):
         signing_order = models.PositiveSmallIntegerField(
             _('signing order'),
             default=0,
-            help_text=_('Position in the list of signers. Starts at 1.'))
+            help_text=_('Position in the list of signers.'))
 
         #: Identifier in backend's external database.
         signature_backend_id = models.CharField(
