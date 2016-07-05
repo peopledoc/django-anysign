@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """Django settings for django-anysign demo project."""
 import os
-import django
 
 
 # Configure some relative directories.
@@ -50,8 +49,6 @@ INSTALLED_APPS = [
     # Stuff that must be at the end.
     'django_nose',
 ]
-if django.get_version() < '1.7':
-    INSTALLED_APPS.append('south')
 
 
 # BEGIN middlewares
@@ -84,7 +81,6 @@ NOSE_ARGS = [
     '--cover-package=django_anysign_demo',
     '--cover-package=django_dummysign',
     '--exclude-dir=demo/django_anysign_demo/migrations',
-    '--exclude-dir=demo/django_anysign_demo/south_migrations',
     '--no-path-adjustment',
     '--nocapture',
     '--verbosity=2',

@@ -34,7 +34,7 @@ VERSION = open(os.path.join(here, 'VERSION')).read().strip()
 AUTHOR = u'Benoît Bryon'
 EMAIL = 'benoit@marmelune.net'
 LICENSE = 'BSD'
-URL = 'https://{name}.readthedocs.org/'.format(name=NAME)
+URL = 'https://{name}.readthedocs.io/'.format(name=NAME)
 CLASSIFIERS = [
     'Development Status :: 4 - Beta',
     'Framework :: Django',
@@ -52,8 +52,7 @@ KEYWORDS = [
 PACKAGES = [NAME.replace('-', '_'), 'django_dummysign']
 REQUIREMENTS = [
     # BEGIN requirements
-    'Django',
-    'django-uuidfield>=0.5',
+    'Django>=1.8,<1.9',
     'setuptools',
     # END requirements
 ]

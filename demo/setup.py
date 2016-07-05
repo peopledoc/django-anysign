@@ -15,7 +15,7 @@ README = open(os.path.join(here, 'README.rst')).read()
 VERSION = open(os.path.join(project_root, 'VERSION')).read().strip()
 AUTHOR = u'Benoît Bryon'
 EMAIL = u'benoit@marmelune.net'
-URL = 'https://django-anysign.readthedocs.org/'
+URL = 'https://django-anysign.readthedocs.io/'
 CLASSIFIERS = ['Development Status :: 4 - Beta',
                'License :: OSI Approved :: BSD License',
                'Programming Language :: Python :: 2.7',

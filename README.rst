@@ -31,12 +31,12 @@ refactoring!
 Resources
 *********
 
-* Documentation: https://django-anysign.readthedocs.org
+* Documentation: https://django-anysign.readthedocs.io
 * Bugtracker: https://github.com/novafloss/django-anysign/issues
-* Changelog: https://django-anysign.readthedocs.org/en/latest/about/changelog.html
+* Changelog: https://django-anysign.readthedocs.io/en/latest/about/changelog.html
 * Roadmap: https://github.com/novafloss/django-anysign/milestones
 * Code repository: https://github.com/novafloss/django-anysign
 * Continuous integration: https://travis-ci.org/novafloss/django-anysign
 
 .. _`Alternatives & related projects`:
-   https://django-anysign.readthedocs.org/en/latest/about/alternatives.html
+   https://django-anysign.readthedocs.io/en/latest/about/alternatives.html
