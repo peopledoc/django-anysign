@@ -8,7 +8,11 @@ about future releases, check `milestones`_ and :doc:`/about/vision`.
 1.0 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Feature #21 - Drop support of Django 1.5, 1.6 and 1.7
+  Explicitly mark Django 1.5, 1.6 and 1.7 as not supported
+  (tests fail with those versions) in packaging.
+
+- Feature #24 - Use django UUIDField instead of uuidfield external app.
 
 
 0.4 (2015-06-25)
