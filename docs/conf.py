@@ -95,8 +95,6 @@ htmlhelp_basename = u'{project}doc'.format(project=project_slug)
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/2.7', None),
-    'django': ('https://docs.djangoproject.com/en/1.8/',
-               'https://docs.djangoproject.com/en/1.8/_objects/'),
 }
 
 

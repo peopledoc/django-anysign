@@ -1,6 +1,6 @@
 ######
 Models
-###### 
+######
 
 `django-anysign` presumes digital signature involves models in the Django
 project: one to store the signatures, another to store signers, and one to
