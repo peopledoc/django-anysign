@@ -42,6 +42,7 @@ CLASSIFIERS = [
     'Programming Language :: Python :: 2.7',
     'Programming Language :: Python :: 3.3',
     'Programming Language :: Python :: 3.4',
+    'Programming Language :: Python :: 3.5',
 ]
 KEYWORDS = [
     'signature',
@@ -52,7 +53,7 @@ KEYWORDS = [
 PACKAGES = [NAME.replace('-', '_'), 'django_dummysign']
 REQUIREMENTS = [
     # BEGIN requirements
-    'Django>=1.8,<1.9',
+    'Django>=1.8,<1.10',
     'setuptools',
     # END requirements
 ]

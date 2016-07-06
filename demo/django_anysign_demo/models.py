@@ -1,4 +1,4 @@
-import django_anysign
+from django_anysign import api as django_anysign
 
 
 class SignatureType(django_anysign.SignatureType):

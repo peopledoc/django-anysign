@@ -6,10 +6,9 @@ import re
 
 # Minimal Django settings. Required to use sphinx.ext.autodoc, because
 # django-anysign depends on Django...
-from django.conf import settings
-
-
-settings.configure()
+os.environ['DJANGO_SETTINGS_MODULE'] = 'django_anysign_demo.settings'
+import django
+django.setup()
 
 
 # -- General configuration ----------------------------------------------------
