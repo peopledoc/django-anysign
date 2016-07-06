@@ -21,8 +21,7 @@ class SendView(FormView):
         signature_type, created = SignatureType.objects.get_or_create(
             signature_backend_code='dummysign')
         signature = Signature.objects.create(signature_type=signature_type)
-        signer = Signer()
-        signature.signers.add(signer)
+        Signer.objects.create(signature=signature)
         logger.debug(
             '[django_anysign_demo] Signature ID={id} created in local DB'
             .format(id=signature.id))

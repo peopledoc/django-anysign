@@ -47,7 +47,7 @@ class SignerURLTestCase(TestCase):
         signature_type, created = SignatureType.objects.get_or_create(
             signature_backend_code='dummysign')
         signature = Signature.objects.create(signature_type=signature_type)
-        signer = Signer()
+        signer = Signer.objects.create(signature=signature)
         signature.signers.add(signer)
 
         url = reverse('anysign:signer', args=[signer.pk])
@@ -63,8 +63,7 @@ class SignerURLTestCase(TestCase):
         signature_type, created = SignatureType.objects.get_or_create(
             signature_backend_code='dummysign')
         signature = Signature.objects.create(signature_type=signature_type)
-        signer = Signer()
-        signature.signers.add(signer)
+        signer = Signer.objects.create(signature=signature)
 
         url = reverse('anysign:signer', args=[signer.pk])
         response = self.client.post(url, follow=True)

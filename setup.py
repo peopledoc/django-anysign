@@ -52,7 +52,7 @@ KEYWORDS = [
 PACKAGES = [NAME.replace('-', '_'), 'django_dummysign']
 REQUIREMENTS = [
     # BEGIN requirements
-    'Django>=1.8,<1.9',
+    'Django>=1.8,<1.10',
     'setuptools',
     # END requirements
 ]
