@@ -1,6 +1,6 @@
 import logging
 
-import django_anysign
+from django_anysign import api as django_anysign
 
 
 logger = logging.getLogger(__name__)

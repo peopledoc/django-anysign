@@ -3,7 +3,7 @@
 from django.core.urlresolvers import reverse
 from django.test import TestCase
 
-import django_anysign
+from django_anysign import api as django_anysign
 
 
 class HomeURLTestCase(TestCase):

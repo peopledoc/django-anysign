@@ -14,6 +14,11 @@ about future releases, check `milestones`_ and :doc:`/about/vision`.
 
 - Add support of Django 1.9.
 
+- Breaking: `django_anysign.api` package is no longer imported in
+  `django_anysign` root package, as it is not compatible with Django 1.9.
+  Instead of doing ``import django_anysign``, just do:
+  ``from django_anysign import api as django_anysign``.
+
 - Feature #24 - Use django UUIDField instead of uuidfield external app.
 
 
