@@ -4,6 +4,10 @@ django-anysign
 
 .. image:: https://travis-ci.org/novafloss/django-anysign.svg?branch=master
     :target: https://travis-ci.org/novafloss/django-anysign
+    :alt: Build Status
+.. image:: https://readthedocs.org/projects/django-anysign/badge/
+    :target: http://django-anysign.readthedocs.io/en/latest/
+    :alt: Documentation Status
 
 `django-anysign` is a Django application to manage online signature in a
 generic way.
