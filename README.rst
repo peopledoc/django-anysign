@@ -48,5 +48,5 @@ Resources
     :alt: Build Status
 
 .. |Documentation Status| image:: https://readthedocs.org/projects/django-anysign/badge/
-    :target: http://django-docusign.readthedocs.io/en/latest/
+    :target: http://django-anysign.readthedocs.io/en/latest/
     :alt: Build Status
