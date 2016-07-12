@@ -2,6 +2,9 @@
 django-anysign
 ##############
 
+.. image:: https://travis-ci.org/novafloss/django-anysign.svg?branch=master
+    :target: https://travis-ci.org/novafloss/django-anysign
+
 `django-anysign` is a Django application to manage online signature in a
 generic way.
 
