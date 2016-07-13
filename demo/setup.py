@@ -14,7 +14,7 @@ DESCRIPTION = 'Demo for django-anysign.'
 README = open(os.path.join(here, 'README.rst')).read()
 VERSION = open(os.path.join(project_root, 'VERSION')).read().strip()
 AUTHOR = u'Benoît Bryon'
-EMAIL = u'benoit@marmelune.net'
+EMAIL = u'novafloss@people-doc.com'
 URL = 'https://django-anysign.readthedocs.io/'
 CLASSIFIERS = ['Development Status :: 4 - Beta',
                'License :: OSI Approved :: BSD License',

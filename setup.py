@@ -32,7 +32,7 @@ DESCRIPTION = 'Online signature for Django: multiple services, generic API.'
 README = open(os.path.join(here, 'README.rst')).read()
 VERSION = open(os.path.join(here, 'VERSION')).read().strip()
 AUTHOR = u'Benoît Bryon'
-EMAIL = 'benoit@marmelune.net'
+EMAIL = u'novafloss@people-doc.com'
 LICENSE = 'BSD'
 URL = 'https://{name}.readthedocs.io/'.format(name=NAME)
 CLASSIFIERS = [
