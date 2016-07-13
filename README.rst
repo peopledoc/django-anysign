@@ -34,9 +34,9 @@ Resources
 *********
 
 * Documentation: https://django-anysign.readthedocs.io
+* PyPI page: https://pypi.python.org/pypi/django-anysign
 * Bugtracker: https://github.com/novafloss/django-anysign/issues
 * Changelog: https://django-anysign.readthedocs.io/en/latest/about/changelog.html
-* Roadmap: https://github.com/novafloss/django-anysign/milestones
 * Code repository: https://github.com/novafloss/django-anysign
 * Continuous integration: https://travis-ci.org/novafloss/django-anysign
 
