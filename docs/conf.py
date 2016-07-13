@@ -37,7 +37,7 @@ master_doc = 'index'
 # General information about the project.
 project = u'django-anysign'
 project_slug = re.sub(r'([\w_.-]+)', u'-', project)
-copyright = u'2014-2015, Benoît Bryon'
+copyright = u'2014-2016, PeopleDoc'
 author = u'Benoît Bryon'
 author_slug = re.sub(r'([\w_.-]+)', u'-', author)
 
