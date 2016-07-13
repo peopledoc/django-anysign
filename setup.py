@@ -36,13 +36,13 @@ EMAIL = u'novafloss@people-doc.com'
 LICENSE = 'BSD'
 URL = 'https://{name}.readthedocs.io/'.format(name=NAME)
 CLASSIFIERS = [
-    'Development Status :: 4 - Beta',
-    'Framework :: Django',
+    'Development Status :: 5 - Production/Stable',
     'License :: OSI Approved :: BSD License',
     'Programming Language :: Python :: 2.7',
     'Programming Language :: Python :: 3.3',
     'Programming Language :: Python :: 3.4',
     'Programming Language :: Python :: 3.5',
+    'Framework :: Django',
 ]
 KEYWORDS = [
     'signature',
