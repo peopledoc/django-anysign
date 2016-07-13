@@ -1,4 +1,4 @@
-|Build Status| |Documentation Status|
+|Build Status| |Documentation Status| |Pypi Status|
 
 ##############
 django-anysign
@@ -50,3 +50,6 @@ Resources
 .. |Documentation Status| image:: https://readthedocs.org/projects/django-anysign/badge/
     :target: http://django-anysign.readthedocs.io/en/latest/
     :alt: Build Status
+
+.. |Pypi Status| image:: https://img.shields.io/pypi/v/django-anysign.svg
+    :target: https://pypi.python.org/pypi/django-anysign
