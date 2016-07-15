@@ -2,10 +2,12 @@
 """django-anysign documentation build configuration file."""
 import os
 import re
+import sys
 
 
 # Minimal Django settings. Required to use sphinx.ext.autodoc, because
 # django-anysign depends on Django...
+sys.path.append(os.path.join(os.path.abspath('.'), '..', 'demo'))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'django_anysign_demo.settings'
 import django
 django.setup()
