@@ -45,11 +45,9 @@ Resources
 
 .. |Build Status| image:: https://travis-ci.org/novafloss/django-anysign.svg?branch=master
     :target: https://travis-ci.org/novafloss/django-anysign
-    :alt: Build Status
 
 .. |Documentation Status| image:: https://readthedocs.org/projects/django-anysign/badge/
     :target: http://django-anysign.readthedocs.io/en/latest/
-    :alt: Build Status
 
 .. |Pypi Status| image:: https://img.shields.io/pypi/v/django-anysign.svg
     :target: https://pypi.python.org/pypi/django-anysign
