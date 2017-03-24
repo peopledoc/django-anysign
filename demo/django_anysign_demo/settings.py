@@ -25,6 +25,15 @@ DATABASES = {
 }
 
 
+# Template.
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True,
+    },
+]
+
+
 # Required.
 SECRET_KEY = "This is a secret made public on project's repository."
 
