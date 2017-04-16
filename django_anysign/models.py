@@ -31,7 +31,7 @@ class SignatureType(models.Model):
     signature_backend_code = models.CharField(
         _('signature backend'),
         max_length=50,
-        choices=signature_backend_choices(),
+        choices=signature_backend_choices,
         db_index=True,
     )
 
