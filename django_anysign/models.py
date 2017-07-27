@@ -105,7 +105,8 @@ def SignatureFactory(SignatureType):
         #: Type of the signature, i.e. a backend and its configuration.
         signature_type = models.ForeignKey(
             SignatureType,
-            verbose_name=_('signature type'))
+            verbose_name=_('signature type'),
+            on_delete=models.CASCADE)
 
         #: Identifier in backend's external database.
         signature_backend_id = models.CharField(
@@ -168,7 +169,8 @@ def SignerFactory(Signature):
         #: Signature.
         signature = models.ForeignKey(
             Signature,
-            related_name='signers')
+            related_name='signers',
+            on_delete=models.CASCADE)
 
         #: Position as a signer.
         signing_order = models.PositiveSmallIntegerField(
