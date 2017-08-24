@@ -9,6 +9,7 @@ about future releases, check `milestones`_ and :doc:`/about/vision`.
 ----------------
 
 - Add explicit on_delete on ForeignKeys.
+- Confirm compatibility with Django 1.11
 
 
 1.1 (2017-03-24)
