@@ -91,7 +91,8 @@ class SignatureType(models.Model):
             return self._signature_backend
 
 
-def SignatureFactory(SignatureType):
+def SignatureFactory(SignatureType, on_stype_delete=models.CASCADE):
+
     """Return base class for signature model, using ``SignatureType`` model.
 
     This pattern is the best one we found at the moment to have an abstract
@@ -99,13 +100,16 @@ def SignatureFactory(SignatureType):
     ``SignatureType`` model. Feel free to propose a better option if you know
     one ;)
 
+    :param SignatureType: concrete SignatureType model
+    :param on_stype_delete: on_delete SignatureType ForeignKey behaviour
     """
     class Signature(models.Model):
         """Base model for signature models."""
         #: Type of the signature, i.e. a backend and its configuration.
         signature_type = models.ForeignKey(
             SignatureType,
-            verbose_name=_('signature type'))
+            verbose_name=_('signature type'),
+            on_delete=on_stype_delete)
 
         #: Identifier in backend's external database.
         signature_backend_id = models.CharField(
@@ -150,13 +154,15 @@ def SignatureFactory(SignatureType):
     return Signature
 
 
-def SignerFactory(Signature):
+def SignerFactory(Signature, on_signature_delete=models.CASCADE):
     """Return base class for signer model, using ``Signature`` model.
 
     This pattern is the best one we found at the moment to have an abstract
     base model ``Signer`` with appropriate foreign key to ``Signature``
     model. Feel free to propose a better option if you know one ;)
 
+    :param Signature: concrete Signature model
+    :param on_signature_delete: on_delete Signature ForeignKey behaviour
     """
     class Signer(models.Model):
         """Base class for signer.
@@ -168,7 +174,8 @@ def SignerFactory(Signature):
         #: Signature.
         signature = models.ForeignKey(
             Signature,
-            related_name='signers')
+            related_name='signers',
+            on_delete=on_signature_delete)
 
         #: Position as a signer.
         signing_order = models.PositiveSmallIntegerField(

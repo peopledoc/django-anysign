@@ -8,7 +8,7 @@ about future releases, check `milestones`_ and :doc:`/about/vision`.
 1.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Add explicit on_delete on ForeignKeys.
 
 
 1.1 (2017-03-24)
