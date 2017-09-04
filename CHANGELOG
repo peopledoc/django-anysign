@@ -5,7 +5,7 @@ This document describes changes between each past release. For information
 about future releases, check `milestones`_ and :doc:`/about/vision`.
 
 
-1.2 (unreleased)
+1.2 (2017-09-04)
 ----------------
 
 - Add explicit on_delete on ForeignKeys.
