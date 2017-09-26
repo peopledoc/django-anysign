@@ -1,7 +1,10 @@
 # coding=utf8
 """Test suite for demoproject.download."""
-from django.core.urlresolvers import reverse
 from django.test import TestCase
+try:
+    from django.urls import reverse
+except ImportError:
+    from django.core.urlresolvers import reverse
 
 from django_anysign import api as django_anysign
 
