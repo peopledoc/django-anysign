@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 import uuid
 
+import django.db.models.deletion
 from django.db import models, migrations
 
 
@@ -39,7 +40,7 @@ class Migration(migrations.Migration):
                 ('signing_order', models.PositiveSmallIntegerField(default=0, help_text='Position in the list of signers. Starts at 1.', verbose_name='signing order')),
                 ('signature_backend_id', models.CharField(default='', max_length=100, verbose_name='ID in signature backend', db_index=True, blank=True)),
                 ('anysign_internal_id', models.UUIDField(verbose_name='ID in internal database', default=uuid.uuid4)),
-                ('signature', models.ForeignKey(related_name='signers', to='django_anysign_demo.Signature')),
+                ('signature', models.ForeignKey(related_name='signers', on_delete=django.db.models.deletion.CASCADE, to='django_anysign_demo.Signature')),
             ],
             options={
                 'abstract': False,
@@ -48,6 +49,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='signature',
             name='signature_type',
-            field=models.ForeignKey(verbose_name='signature type', to='django_anysign_demo.SignatureType'),
+            field=models.ForeignKey(verbose_name='signature type', on_delete=django.db.models.deletion.CASCADE, to='django_anysign_demo.SignatureType'),
         ),
     ]
