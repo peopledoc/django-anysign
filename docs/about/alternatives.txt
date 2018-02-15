@@ -49,9 +49,9 @@ It does not use `django-anysign` API.
 .. target-notes::
 
 .. _`django-dummysign`:
-   https://github.com/novafloss/django-anysign/tree/master/django_dummysign/
-.. _`django-docusign`: https://github.com/novafloss/django-docusign/
+   https://github.com/peopledoc/django-anysign/tree/master/django_dummysign/
+.. _`django-docusign`: https://github.com/peopledoc/django-docusign/
 .. _`DocuSign`: https://www.docusign.com/
-.. _`pydocusign`: https://github.com/novafloss/pydocusign/
+.. _`pydocusign`: https://github.com/peopledoc/pydocusign/
 .. _`django-hello_sign`: https://pypi.python.org/pypi/django-hello_sign/
 .. _`hellosign`: https://www.hellosign.com/
