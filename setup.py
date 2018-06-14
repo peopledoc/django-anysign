@@ -56,7 +56,7 @@ KEYWORDS = [
 PACKAGES = [NAME.replace('-', '_'), 'django_dummysign']
 REQUIREMENTS = [
     # BEGIN requirements
-    'Django>=1.11,<2.0' if IS_PYTHON2 else 'Django>=1.11',
+    'Django>=1.11',
     'setuptools',
     # END requirements
 ]
