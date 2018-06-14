@@ -1,8 +1,5 @@
 """Base material for signature backends."""
-try:
-    from django.urls import reverse
-except ImportError:
-    from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 
 class SignatureBackend(object):

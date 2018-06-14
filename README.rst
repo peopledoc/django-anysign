@@ -34,7 +34,7 @@ Resources
 *********
 
 * Documentation: https://django-anysign.readthedocs.io
-* PyPI page: https://pypi.python.org/pypi/django-anysign
+* PyPI page: https://pypi.org/project/django-anysign
 * Bugtracker: https://github.com/peopledoc/django-anysign/issues
 * Changelog: https://django-anysign.readthedocs.io/en/latest/about/changelog.html
 * Code repository: https://github.com/peopledoc/django-anysign
@@ -50,4 +50,4 @@ Resources
     :target: http://django-anysign.readthedocs.io/en/latest/
 
 .. |Pypi Status| image:: https://img.shields.io/pypi/v/django-anysign.svg
-    :target: https://pypi.python.org/pypi/django-anysign
+    :target: https://pypi.org/project/django-anysign

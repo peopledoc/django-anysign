@@ -34,9 +34,6 @@ Use topic branches
   example, if you are working on ticket #23 which is about contribute
   documentation, name your branch like ``23-contribute-doc``.
 
-* If you work in a development branch and want to refresh it with changes from
-  master, please `rebase`_ or `merge-based rebase`_, i.e. do not merge master.
-
 
 ***********
 Fork, clone
@@ -78,8 +75,8 @@ See also ``make help``.
 
 .. _`django-anysign bugtracker`: https://github.com/peopledoc/django-anysign/issues
 .. _`rebase`: https://git-scm.com/book/en/v2/Git-Branching-Rebasing
-.. _`merge-based rebase`: http://tech.novapost.fr/psycho-rebasing-en.html
-.. _`pip`: https://pypi.python.org/pypi/pip/
-.. _`tox`: https://pypi.python.org/pypi/tox/
-.. _`Sphinx`: https://pypi.python.org/pypi/Sphinx/
-.. _`zest.releaser`: https://pypi.python.org/pypi/zest.releaser/
+.. _`merge-based rebase`: https://tech.people-doc.com/psycho-rebasing.html
+.. _`pip`: https://pypi.org/project/pip/
+.. _`tox`: https://pypi.org/project/tox/
+.. _`Sphinx`: https://pypi.org/project/Sphinx/
+.. _`zest.releaser`: https://pypi.org/project/zest.releaser/

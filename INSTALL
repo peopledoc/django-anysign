@@ -15,7 +15,7 @@ See :doc:`/about/license` for details.
 Requirements
 ************
 
-`django-anysign` has been tested against `Python`_ 2.7, 3.3, 3.4 and 3.5. Other
+`django-anysign` has been tested against `Python`_ 2.7, 3.5 and 3.6. Other
 versions may work, but they are not part of the test suite at the moment.
 
 Installing `django-anysign` will automatically trigger the installation of the
@@ -82,4 +82,4 @@ You should get installed `django_anysign`'s version.
 .. target-notes::
 
 .. _`Python`: https://www.python.org/
-.. _`pip`: https://pypi.python.org/pypi/pip/
+.. _`pip`: https://pypi.org/project/pip/
