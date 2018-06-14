@@ -53,5 +53,5 @@ It does not use `django-anysign` API.
 .. _`django-docusign`: https://github.com/peopledoc/django-docusign/
 .. _`DocuSign`: https://www.docusign.com/
 .. _`pydocusign`: https://github.com/peopledoc/pydocusign/
-.. _`django-hello_sign`: https://pypi.python.org/pypi/django-hello_sign/
+.. _`django-hello_sign`: https://pypi.org/project/django-hello_sign/
 .. _`hellosign`: https://www.hellosign.com/
