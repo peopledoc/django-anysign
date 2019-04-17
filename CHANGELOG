@@ -14,6 +14,7 @@ about future releases, check `milestones`_ and :doc:`/about/vision`.
 
 - Run flake8, sphinx and readme on Python 3.6
 
+
 1.3 (2018-02-15)
 ----------------
 
