@@ -38,17 +38,12 @@ URL = 'https://{name}.readthedocs.io/'.format(name=NAME)
 CLASSIFIERS = [
     'Development Status :: 5 - Production/Stable',
     'License :: OSI Approved :: BSD License',
-    'Programming Language :: Python :: 2',
-    'Programming Language :: Python :: 2.7',
     'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 3.5',
-    'Programming Language :: Python :: 3.6',
     'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
     'Framework :: Django',
-    'Framework :: Django :: 1.11',
-    'Framework :: Django :: 2.0',
-    'Framework :: Django :: 2.1',
     'Framework :: Django :: 2.2',
+    'Framework :: Django :: 3.2',
 ]
 KEYWORDS = [
     'signature',
@@ -59,7 +54,7 @@ KEYWORDS = [
 PACKAGES = [NAME.replace('-', '_'), 'django_dummysign']
 REQUIREMENTS = [
     # BEGIN requirements
-    'Django>=1.11',
+    'Django>=2.2.27,<3.3',
     'setuptools',
     # END requirements
 ]

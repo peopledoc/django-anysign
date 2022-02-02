@@ -1,0 +1,24 @@
+name: Build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - python-version: 3.8
+            tox-options: "-e flake8 -e py38-django22 -e py38-django32 -e readme -e sphinx"
+          - python-version: 3.7
+            tox-options: "-e py37-django22 -e py37-django32"
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install tox and any other packages
+        run: pip install tox
+      - name: Run tox
+        run: tox ${{ matrix.tox-options }}
