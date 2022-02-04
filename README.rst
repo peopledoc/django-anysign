@@ -43,8 +43,8 @@ Resources
 .. _`Alternatives & related projects`:
    https://django-anysign.readthedocs.io/en/latest/about/alternatives.html
 
-.. |Build Status| image:: https://travis-ci.org/peopledoc/django-anysign.svg?branch=master
-    :target: https://travis-ci.org/peopledoc/django-anysign
+.. |Build Status| image:: https://github.com/peopledoc/django-anysign/actions/workflows/main.yml/badge.svg?branch=master
+    :target: https://github.com/peopledoc/django-anysign/actions
 
 .. |Documentation Status| image:: https://readthedocs.org/projects/django-anysign/badge/
     :target: http://django-anysign.readthedocs.io/en/latest/

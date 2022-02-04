@@ -1,4 +1,4 @@
-from django.conf.urls import include, url
+from django.urls import include, path
 from django.views.generic import TemplateView
 
 from django_anysign_demo import views
@@ -9,8 +9,10 @@ send_view = views.SendView.as_view()
 
 
 urlpatterns = [
-    url(r'^signature/',
-        include('django_anysign_demo.signature_urls', namespace='anysign')),
-    url(r'^send/$', send_view, name='send'),
-    url(r'^$', home_view, name='home')
+    path(
+        'signature/',
+        include('django_anysign_demo.signature_urls', namespace='anysign')
+    ),
+    path('send/', send_view, name='send'),
+    path('', home_view, name='home')
 ]
