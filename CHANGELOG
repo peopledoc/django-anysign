@@ -5,18 +5,31 @@ This document describes changes between each past release. For information
 about future releases, check `milestones`_ and :doc:`/about/vision`.
 
 
-1.5 (unreleased)
+1.6 (unreleased)
 ----------------
 
 - Nothing changed yet.
 
+
+1.5 (2022-02-04)
+----------------
+
+- Drop compat for Django <2.2.27 and Python 3.5 and 3.6
+
+- Add compat for Django 3.2 and Python 3.8
+
+- Run rests for Django 2.2.27, 3.2 and Python 3.7, 3.8
+
+- Run flake8, sphinx and readme on Python 3.8
+
+- Move from travis to circleci
 
 1.4 (2019-04-17)
 ----------------
 
 - Drop compat for django <1.11 and Python 3.4
 
-- Run tests for Django 2.2 and and Python 3.5, 3.6 and 3.7
+- Run tests for Django 2.2 and Python 3.5, 3.6 and 3.7
 
 - Run flake8, sphinx and readme on Python 3.6
 
